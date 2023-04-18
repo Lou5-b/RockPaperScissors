@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tick Tack Toe</title>
+        
+    </head>
+
+    <body>
+        <script>
+            
+
+            function getComputerChoice(a,b,c) {
+
+                let choices = [
+                    a,
+                    b,
+                    c
+                ];
+                let randomizer = Math.floor(Math.random()*choices.length);
+
+                
+                
+                let computerChoice = choices[randomizer]
+
+                return computerChoice;
+            }
+
+            let choice = getComputerChoice("Rock","Paper","Scissors")
+            console.log(choice)
+            
+        </script>
+    </body>
+</html>
