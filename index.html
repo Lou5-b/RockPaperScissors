@@ -27,8 +27,58 @@
                 return computerChoice;
             }
 
-            let choice = getComputerChoice("Rock","Paper","Scissors")
-            console.log(choice)
+            let playerscore = 0
+            let cpscore = 0
+
+            function oneRound() {
+                let playerSelectionprompt = prompt("Rock Paper Scissors");
+                let playerSelection = playerSelectionprompt.toUpperCase()
+                
+                let choice = getComputerChoice("Rock","Paper","Scissors")
+                
+                if (playerSelection === "ROCK" && choice === "Rock") {
+                    console.log("Tie!")
+                } else if (playerSelection === "ROCK" && choice === "Paper") {
+                    console.log("You lost... :( Paper beats rock.")
+                    cpscore = cpscore + 1
+                } else if (playerSelection === "ROCK" && choice === "Scissors") {
+                    console.log("You won! Rock beats Scissors")
+                    playerscore = playerscore + 1
+                } else if (playerSelection === "PAPER" && choice === "Rock") {
+                    console.log("You won! :( Paper beats rock.")
+                    playerscore = playerscore + 1
+                } else if (playerSelection === "PAPER" && choice === "Paper") {
+                    console.log("Tie!")
+                } else if (playerSelection === "PAPER" && choice === "Scissors") {
+                    console.log("You lost... :( Scissors beats Paper.")
+                    cpscore = cpscore + 1
+                } else if (playerSelection === "SCISSORS" && choice === "Rock") {
+                    console.log("You lost... :( Rocks beats Scissors")
+                    playerscore = playerscore + 1
+                } else if (playerSelection === "SCISSORS" && choice === "Paper") {
+                    console.log("You won! :( Scissors beats Paper.")
+                    playerscore = playerscore + 1
+                } else if (playerSelection === "SCISSORS" && choice === "Scissors") {
+                    console.log("Tie!")
+                } else {
+                    console.log("error...")
+                }
+
+                console.log(playerscore + "," + cpscore)
+
+            }
+            
+            oneRound()
+            oneRound()
+            oneRound()
+            oneRound()
+            oneRound()
+
+            if (playerscore > cpscore) {
+                console.log("You are the winner!")
+            } else {
+                console.log("You lost... :[")
+            }
             
         </script>
     </body>
